@@ -32,7 +32,7 @@ export { SystemTheme } from './templates/themes/system.theme';
 *
 * *
 * *
-* *   🚀 tzMail - Servidor de Teste
+* *   tzMail - Servidor de Teste
 */
 
 const app = express();
