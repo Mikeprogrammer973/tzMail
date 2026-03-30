@@ -123,11 +123,11 @@ As credenciais `SMTP_USER` e `SMTP_PASS` são lidas antes da criação da fábri
 
 | Propriedade | Tipo | Descrição |
 | --- | --- | --- |
-| `to` | `string \ | string[]` | Destinatário único ou lista de destinatários. |
+| `to` | `string` | `string[]` | Destinatário único ou lista de destinatários. |
 | `subject` | `string` | Assunto do email. |
 | `from?` | `string` | Remetente opcional que sobrescreve `defaultFrom`. |
-| `cc?` | `string \ | string[]` | Cópia carbono opcional. |
-| `bcc?` | `string \ | string[]` | Cópia oculta opcional. |
+| `cc?` | `string` | `string[]` | Cópia carbono opcional. |
+| `bcc?` | `string` | `string[]` | Cópia oculta opcional. |
 | `attachments?` | `IAttachment[]` | Lista de anexos em formato Nodemailer. |
 | `template?` | `ITemplate` | Template a ser renderizado quando `html` não existir. |
 | `text?` | `string` | Corpo textual opcional. |
@@ -143,7 +143,7 @@ As credenciais `SMTP_USER` e `SMTP_PASS` são lidas antes da criação da fábri
 | Propriedade | Tipo | Descrição |
 | --- | --- | --- |
 | `filename` | `string` | Nome exibido do arquivo anexado. |
-| `content?` | `string \ | Buffer` | Conteúdo em memória do anexo. |
+| `content?` | `string` | Buffer | Conteúdo em memória do anexo. |
 | `path?` | `string` | Caminho local do arquivo anexado. |
 | `contentType?` | `string` | MIME type opcional. |
 | `cid?` | `string` | Content ID para uso em imagens embutidas. |
@@ -160,7 +160,7 @@ As credenciais `SMTP_USER` e `SMTP_PASS` são lidas antes da criação da fábri
 | Propriedade | Tipo | Descrição |
 | --- | --- | --- |
 | `transporter` | `Transporter` | Instância Nodemailer usada em `sendMail()`. |
-| `defaultFrom` | `string \ | undefined` | Remetente padrão aplicado quando `options.from` não existe. |
+| `defaultFrom` | `string` | `undefined` | Remetente padrão aplicado quando `options.from` não existe. |
 
 
 #### Dependências do construtor
@@ -235,7 +235,7 @@ addFromUrl() sempre lança Error('Method not implemented yet'). O fluxo de demon
 | --- | --- | --- |
 | `name` | `string` | Nome do template, como `modern_light`. |
 | `theme` | `ThemeType` | Tema associado ao template. |
-| `variant` | `'light' \ | 'dark'` | Variação visual do template. |
+| `variant` | `'light'`  | `'dark'` | Variação visual do template. |
 | `config` | `ITemplateConfig` | Configuração estrutural do template. |
 
 
@@ -255,9 +255,9 @@ addFromUrl() sempre lança Error('Method not implemented yet'). O fluxo de demon
 | `header?` | `IHeaderConfig` | Configuração do cabeçalho. |
 | `body?` | `IBodyConfig` | Configuração do corpo. |
 | `footer?` | `IFooterConfig` | Configuração do rodapé. |
-| `layout?` | `'full' \ | 'minimal'` | Layout geral do email. |
-| `spacing?` | `'compact' \ | 'normal' \ | 'relaxed'` | Espaçamento global. |
-| `borderRadius?` | `'none' \ | 'small' \ | 'medium' \ | 'large'` | Raio de borda do container. |
+| `layout?` | `'full'`  `'minimal'` | Layout geral do email. |
+| `spacing?` | `'compact'` `'normal'` `'relaxed'` | Espaçamento global. |
+| `borderRadius?` | `'none'` `'small'`  `'medium'`  `'large'` | Raio de borda do container. |
 
 
 ### `IBodyConfig`
@@ -271,8 +271,8 @@ addFromUrl() sempre lança Error('Method not implemented yet'). O fluxo de demon
 | `content?` | `string` | HTML do corpo quando já pronto. |
 | `buttonText?` | `string` | Texto do botão. |
 | `buttonUrl?` | `string` | URL do botão. |
-| `buttonVariant?` | `'primary' \ | 'secondary' \ | 'success' \ | 'danger'` | Variante visual do botão. |
-| `alignment?` | `'left' \ | 'center' \ | 'right'` | Alinhamento do conteúdo. |
+| `buttonVariant?` | `'primary'`  `'secondary'`  `'success'`   `'danger'` | Variante visual do botão. |
+| `alignment?` | `'left'`  `'center'`  `'right'` | Alinhamento do conteúdo. |
 | `backgroundColor?` | `string` | Cor de fundo do bloco. |
 | `textColor?` | `string` | Cor do texto do bloco. |
 | `fontSize?` | `number` | Tamanho base da fonte em pixels. |
@@ -285,7 +285,7 @@ addFromUrl() sempre lança Error('Method not implemented yet'). O fluxo de demon
 | Propriedade | Tipo | Descrição |
 | --- | --- | --- |
 | `show` | `boolean` | Define se o cabeçalho será renderizado. |
-| `logo?` | `{ type: 'text' \ | 'image'; text?; imageUrl?; alt?; size? }` | Dados do logo textual ou em imagem. |
+| `logo?` | `{ type: 'text'  'image'; text?; imageUrl?; alt?; size? }` | Dados do logo textual ou em imagem. |
 | `backgroundColor?` | `string` | Cor de fundo do cabeçalho. |
 | `textColor?` | `string` | Cor do texto do cabeçalho. |
 
@@ -298,7 +298,7 @@ addFromUrl() sempre lança Error('Method not implemented yet'). O fluxo de demon
 | --- | --- | --- |
 | `show` | `boolean` | Define se o rodapé será renderizado. |
 | `links?` | `Array<{ text: string; url: string }>` | Links do rodapé. |
-| `socialLinks?` | `Array<{ platform: 'facebook' \ | 'twitter' \ | 'linkedin' \ | 'github'; url: string }>` | Links sociais com ícones. |
+| `socialLinks?` | `Array<{ platform: 'facebook'  'twitter'   'linkedin'   'github'; url: string }>` | Links sociais com ícones. |
 | `copyrightText?` | `string` | Texto de copyright. |
 | `unsubscribeText?` | `string` | Texto do link de cancelamento. |
 | `backgroundColor?` | `string` | Cor de fundo do rodapé. |
@@ -353,7 +353,7 @@ addFromUrl() sempre lança Error('Method not implemented yet'). O fluxo de demon
 | `template` | `string` | HTML acumulado durante a construção. |
 | `theme` | `ITheme` | Tema ativo na renderização. |
 | `config` | `ITemplateConfig` | Configuração do template. |
-| `variant` | `'light' \ | 'dark'` | Variante de cor usada na renderização. |
+| `variant` | `'light'`  `'dark'` | Variante de cor usada na renderização. |
 
 
 #### Dependências do construtor
@@ -362,7 +362,7 @@ addFromUrl() sempre lança Error('Method not implemented yet'). O fluxo de demon
 | --- | --- |
 | `ITheme` | Tema concreto, como `ModernTheme` ou `MinimalTheme`. |
 | `ITemplateConfig` | Configuração de header, body, footer e layout. |
-| `'light' \ | 'dark'` | Variante do template. |
+| `'light'` `'dark'` | Variante do template. |
 
 
 #### Métodos públicos
@@ -670,7 +670,7 @@ Valores: `HEADER`, `BODY`, `FOOTER`, `BUTTON`.
 
 | Propriedade | Tipo | Descrição |
 | --- | --- | --- |
-| `instance` | `EmailFactory \ | undefined` | Instância única mantida pela fábrica. |
+| `instance` | `EmailFactory` `undefined` | Instância única mantida pela fábrica. |
 | `emailService` | `EmailService` | Serviço de envio usado por `sendEmail()`. |
 | `templateService` | `TemplateService` | Serviço de criação e renderização de templates. |
 | `attachmentService` | `AttachmentService` | Serviço de anexos criado junto com a fábrica. |
@@ -1122,7 +1122,7 @@ O `TemplateBuilder` consome o tema concreto em cada etapa da composição do ema
 | `template` | `string` | HTML acumulado durante a construção |
 | `theme` | `ITheme` | Tema concreto usado na renderização |
 | `config` | `ITemplateConfig` | Configuração visual do template |
-| `variant` | `'light' \ | 'dark'` | Variante visual ativa |
+| `variant` | `'light'` `'dark'` | Variante visual ativa |
 
 
 #### Métodos públicos
@@ -1818,206 +1818,9 @@ flowchart TB
 
 ## Instalação
 
-### Instalação no repositório
-
-O contrato público do pacote está centrado em  para execução e  para tipagem. O código-fonte TypeScript e o servidor Express de demonstração em  servem como base de desenvolvimento e validação local.
-
-Para trabalhar no projeto localmente, a etapa base é instalar as dependências declaradas no `package.json`:
 
 ```bash
-npm install
-```
-
-Depois disso, os scripts de desenvolvimento e verificação ficam disponíveis via `npm run`.
-
-### Instalação em projeto consumidor
-
-Ao usar o pacote publicado, o projeto consumidor precisa instalar também as `peerDependencies` declaradas:
-
-```bash
-npm install <pacote-publicado> next nodemailer
-```
-
-## Scripts de execução
-
-next e nodemailer não devem ser tratados como dependências internas já resolvidas pelo pacote publicado. Como estão em peerDependencies, precisam existir no ambiente do consumidor.
-
-*`package.json`*
-
-Os scripts visíveis para o fluxo básico do projeto são:
-
-| Script | Descrição |
-| --- | --- |
-| `build` | Compila o código TypeScript e gera os artefatos publicados em `dist/`. |
-| `dev` | Executa o fluxo de desenvolvimento definido no `package.json`. |
-| `start` | Inicia o fluxo de execução configurado para o pacote ou servidor de demonstração. |
-| `test` | Executa a suíte de testes configurada no projeto. |
-| `lint` | Executa a verificação estática definida para o código-fonte. |
-
-
-### Execução típica
-
-```bash
-npm run build
-npm run dev
-npm run start
-npm run test
-npm run lint
-```
-
-### Uso prático dos scripts
-
-- `build`: prepara a versão distribuível do pacote.
-- `dev`: serve para iterar localmente durante o desenvolvimento.
-- `start`: usa o fluxo configurado para iniciar a aplicação empacotada.
-- `test`: valida o comportamento esperado do código.
-- `lint`: checa consistência e qualidade estática do código.
-
-## Artefatos publicados
-
-*`dist/index.js`, `dist/index.d.ts`*
-
-O pacote publicado é centrado no diretório `dist/`, que contém os artefatos consumíveis:
-
-| Artefato | Papel |
-| --- | --- |
-|  | Entrypoint publicado para execução em runtime. |
-|  | Declarações de tipo públicas consumidas por TypeScript. |
-| `dist/` | Pasta de distribuição publicada após o build. |
-
-
-### Consumo do entrypoint
-
-O consumidor deve importar o pacote a partir do ponto de entrada compilado, não do código-fonte em `src/`. O tipo público também vem da saída compilada, o que mantém o contrato de uso alinhado ao build gerado.
-
-## Configuração TypeScript relevante
-
-*`tsconfig.json`*
-
-A configuração TypeScript relevante para este projeto é a que garante a produção dos dois artefatos públicos:
-
-| Aspecto | Impacto para consumidores e contribuidores |
-| --- | --- |
-| Emissão do JavaScript | Produz o código executável que termina em . |
-| Emissão de declarações | Produz os tipos públicos em . |
-| Saída de compilação | Mantém o pacote distribuível concentrado em `dist/`. |
-| Integração com o ambiente consumidor | Preserva o contrato esperado por aplicações que usam `next` e `nodemailer` como dependências de peer. |
-
-
-### Leitura prática da configuração
-
-- Contribuidores trabalham em TypeScript, mas o que é publicado é a saída compilada.
-- Consumidores usam os arquivos em `dist/`, não os arquivos `.ts`.
-- A presença de  indica que a publicação foi pensada para consumo tipado.
-
-## Uso básico
-
-### Fluxo mínimo para contribuir
-
-1. Instalar dependências com `npm install`.
-2. Compilar com `npm run build`.
-3. Executar a rotina de desenvolvimento com `npm run dev` quando precisar iterar localmente.
-4. Validar com `npm run test` e `npm run lint`.
-
-### Fluxo mínimo para consumir o pacote
-
-1. Instalar o pacote publicado.
-2. Garantir que `next` e `nodemailer` estejam instalados no projeto consumidor.
-3. Importar a biblioteca pelo entrypoint publicado em .
-4. Usar os tipos expostos em  quando o projeto for TypeScript.
-
-### Demonstração local
-
-O repositório também inclui um servidor Express de demonstração em , usado como referência de execução local do projeto durante o desenvolvimento.
-
-```bash
-npm run dev
-# ou
-npm run start
-```
-
-## Fluxo de compilação e consumo
-
-```mermaid
-sequenceDiagram
-    participant Dev as Desenvolvedor
-    participant Npm as npm run build
-    participant Ts as TypeScript Compiler
-    participant Js as dist index js
-    participant Dts as dist index d ts
-    participant App as Aplicação consumidora
-
-    Dev->>Npm: Executa build
-    Npm->>Ts: Inicia compilação
-    Ts->>Js: Gera JavaScript publicado
-    Ts->>Dts: Gera declarações de tipo
-    App->>Js: Importa o entrypoint publicado
-    App->>Dts: Resolve os tipos públicos
-```
-
-## Dependências publicadas
-
-### `peerDependencies`
-
-| Dependência | Papel |
-| --- | --- |
-| `next` | Dependência de peer declarada pelo pacote. |
-| `nodemailer` | Dependência de peer declarada pelo pacote. |
-
-
-### Impacto para uso
-
-- O pacote não deve ser tratado como autossuficiente para essas integrações.
-- O projeto consumidor precisa manter compatibilidade com as versões que instalou.
-- A tipagem e o runtime dependem do ambiente final que fornece essas bibliotecas.
-
-## Arquivos centrais para começar
-
-| Arquivo | Responsabilidade |
-| --- | --- |
-| `package.json` | Declara scripts, dependências e `peerDependencies`. |
-| `tsconfig.json` | Define a compilação TypeScript que gera a saída publicada. |
-|  | Servidor Express de demonstração e ponto de execução local. |
-|  | Entrypoint runtime publicado do pacote. |
-|  | Contrato de tipos públicos publicado. |
-
-
-## Referência rápida
-
-### Instalar
-
-```bash
-npm install
-```
-
-### Compilar
-
-```bash
-npm run build
-```
-
-### Desenvolver
-
-```bash
-npm run dev
-```
-
-### Executar
-
-```bash
-npm run start
-```
-
-### Testar
-
-```bash
-npm run test
-```
-
-### Validar estilo
-
-```bash
-npm run lint
+npm install tzmail
 ```
 
 ---
@@ -2319,7 +2122,7 @@ Contrato do objeto retornado por `TemplateFactory.createTemplate` e `TemplateSer
 | --- | --- | --- |
 | `name` | `string` | Nome do template, gerado como `${themeType}_${variant}`. |
 | `theme` | `ThemeType` | Tema associado ao template. |
-| `variant` | `'light' | 'dark'` | Variante visual aplicada. |
+| `variant` | `'light` `'dark'` | Variante visual aplicada. |
 | `config` | `ITemplateConfig` | Configuração estrutural do template. |
 | `render` | `(data: any) => Promise<string>` | Função assíncrona que produz o HTML final. |
 
@@ -2333,9 +2136,9 @@ Contrato do objeto retornado por `TemplateFactory.createTemplate` e `TemplateSer
 | `header?` | `IHeaderConfig` | Configuração do cabeçalho. |
 | `body?` | `IBodyConfig` | Configuração do conteúdo principal. |
 | `footer?` | `IFooterConfig` | Configuração do rodapé. |
-| `layout?` | `'full' | 'minimal'` | Layout do email. |
-| `spacing?` | `'compact' | 'normal' | 'relaxed'` | Densidade visual. |
-| `borderRadius?` | `'none' | 'small' | 'medium' | 'large'` | Raio de borda aplicado ao layout. |
+| `layout?` | `'full'` `'minimal'` | Layout do email. |
+| `spacing?` | `'compact'` `'normal'`  `'relaxed'` | Densidade visual. |
+| `borderRadius?` | `'none'`  `'small` `'medium'`  `'large'` | Raio de borda aplicado ao layout. |
 
 
 ### IHeaderConfig
@@ -2345,7 +2148,7 @@ Contrato do objeto retornado por `TemplateFactory.createTemplate` e `TemplateSer
 | Propriedade | Tipo | Descrição |
 | --- | --- | --- |
 | `show` | `boolean` | Controla a exibição do cabeçalho. |
-| `logo?` | `{ type: 'text' | 'image'; text?: string; imageUrl?: string; alt?: string; size?: 'small' | 'medium' | 'large' }` | Configuração do logo. |
+| `logo?` | `{ type: 'text' 'image'; text?: string; imageUrl?: string; alt?: string; size?: 'small' 'medium' 'large' }` | Configuração do logo. |
 | `backgroundColor?` | `string` | Cor de fundo do cabeçalho. |
 | `textColor?` | `string` | Cor do texto do cabeçalho. |
 
@@ -2361,8 +2164,8 @@ Contrato do objeto retornado por `TemplateFactory.createTemplate` e `TemplateSer
 | `content?` | `string` | Conteúdo HTML bruto, quando fornecido. |
 | `buttonText?` | `string` | Texto do botão principal. |
 | `buttonUrl?` | `string` | URL do botão principal. |
-| `buttonVariant?` | `'primary' | 'secondary' | 'success' | 'danger'` | Variante visual do botão. |
-| `alignment?` | `'left' | 'center' | 'right'` | Alinhamento do conteúdo. |
+| `buttonVariant?` | `'primary'` `'secondary'` `'success'`  `'danger'` | Variante visual do botão. |
+| `alignment?` | `'left'` `center'` `'right'` | Alinhamento do conteúdo. |
 | `backgroundColor?` | `string` | Cor de fundo do corpo. |
 | `textColor?` | `string` | Cor do texto do corpo. |
 | `fontSize?` | `number` | Tamanho base da fonte. |
@@ -2376,7 +2179,7 @@ Contrato do objeto retornado por `TemplateFactory.createTemplate` e `TemplateSer
 | --- | --- | --- |
 | `show` | `boolean` | Controla a exibição do rodapé. |
 | `links?` | `Array<{ text: string; url: string }>` | Links institucionais ou de navegação. |
-| `socialLinks?` | `Array<{ platform: 'facebook' | 'twitter' | 'linkedin' | 'github'; url: string }>` | Links sociais com ícones. |
+| `socialLinks?` | `Array<{ platform: 'facebook' 'twitter' 'linkedin' 'github'; url: string }>` | Links sociais com ícones. |
 | `copyrightText?` | `string` | Texto de copyright. |
 | `unsubscribeText?` | `string` | Texto do link de descadastro. |
 | `backgroundColor?` | `string` | Cor de fundo do rodapé. |
@@ -3116,7 +2919,7 @@ O objeto de template retornado contém:
 | `template` | `string` | HTML acumulado durante a montagem |
 | `theme` | `ITheme` | Tema concreto usado na renderização |
 | `config` | `ITemplateConfig` | Configuração do template |
-| `variant` | `'light' | 'dark'` | Variante usada para escolher paleta |
+| `variant` | `'light'` `'dark'` | Variante usada para escolher paleta |
 
 
 #### Dependências do construtor
@@ -3125,7 +2928,7 @@ O objeto de template retornado contém:
 | --- | --- |
 | `ITheme` | Tema concreto com cores, tipografia e espaçamento |
 | `ITemplateConfig` | Configuração do layout e das seções |
-| `'light' | 'dark'` | Variante visual |
+| `'light`  `'dark'` | Variante visual |
 
 
 #### Métodos públicos
@@ -3283,11 +3086,11 @@ Valores disponíveis: `system`, `monokai`, `modern`, `corporate`, `minimal`.
 
 | Propriedade | Tipo | Descrição |
 | --- | --- | --- |
-| `to` | `string \ | string[]` | Destinatário ou lista de destinatários |
+| `to` | `string`  `string[]` | Destinatário ou lista de destinatários |
 | `subject` | `string` | Assunto do email |
 | `from?` | `string` | Remetente explícito |
-| `cc?` | `string \ | string[]` | Cópia |
-| `bcc?` | `string \ | string[]` | Cópia oculta |
+| `cc?` | `string` `string[]` | Cópia |
+| `bcc?` | `string` `string[]` | Cópia oculta |
 | `attachments?` | `IAttachment[]` | Anexos |
 | `template?` | `ITemplate` | Template usado para gerar HTML |
 | `text?` | `string` | Corpo em texto puro |
@@ -3301,7 +3104,7 @@ Valores disponíveis: `system`, `monokai`, `modern`, `corporate`, `minimal`.
 | Propriedade | Tipo | Descrição |
 | --- | --- | --- |
 | `filename` | `string` | Nome do arquivo anexado |
-| `content?` | `string \ | Buffer` | Conteúdo em memória |
+| `content?` | `string` | Buffer` | Conteúdo em memória |
 | `path?` | `string` | Caminho local do arquivo |
 | `contentType?` | `string` | MIME type |
 | `cid?` | `string` | Content ID para inline |
@@ -3315,7 +3118,7 @@ Valores disponíveis: `system`, `monokai`, `modern`, `corporate`, `minimal`.
 | --- | --- | --- |
 | `name` | `string` | Nome do template |
 | `theme` | `ThemeType` | Tema selecionado |
-| `variant` | `'light' \ | 'dark'` | Variante visual |
+| `variant` | `'light'` `'dark'` | Variante visual |
 | `config` | `ITemplateConfig` | Configuração aplicada |
 | `render` | `(data: any) => Promise<string>` | Função de renderização |
 
@@ -3329,9 +3132,9 @@ Valores disponíveis: `system`, `monokai`, `modern`, `corporate`, `minimal`.
 | `header?` | `IHeaderConfig` | Configuração do cabeçalho |
 | `body?` | `IBodyConfig` | Configuração do corpo |
 | `footer?` | `IFooterConfig` | Configuração do rodapé |
-| `layout?` | `'full' \ | 'minimal'` | Tipo de layout |
-| `spacing?` | `'compact' \ | 'normal' \ | 'relaxed'` | Densidade do espaçamento |
-| `borderRadius?` | `'none' \ | 'small' \ | 'medium' \ | 'large'` | Raio de borda do card |
+| `layout?` | `'full'` `'minimal'` | Tipo de layout |
+| `spacing?` | `'compact'` `'normal'` `'relaxed'` | Densidade do espaçamento |
+| `borderRadius?` | `'none'` `'small'` `'medium'` `'large'` | Raio de borda do card |
 
 
 ### `IHeaderConfig`
@@ -3341,7 +3144,7 @@ Valores disponíveis: `system`, `monokai`, `modern`, `corporate`, `minimal`.
 | Propriedade | Tipo | Descrição |
 | --- | --- | --- |
 | `show` | `boolean` | Controla exibição do cabeçalho |
-| `logo?` | `{ type: 'text' \ | 'image'; text?: string; imageUrl?: string; alt?: string; size?: 'small' \ | 'medium' \ | 'large' }` | Dados do logo |
+| `logo?` | `{ type: 'text' 'image'; text?: string; imageUrl?: string; alt?: string; size?: 'small' 'medium'  'large' }` | Dados do logo |
 | `backgroundColor?` | `string` | Cor de fundo |
 | `textColor?` | `string` | Cor do texto |
 
@@ -3357,8 +3160,8 @@ Valores disponíveis: `system`, `monokai`, `modern`, `corporate`, `minimal`.
 | `content?` | `string` | HTML bruto do conteúdo |
 | `buttonText?` | `string` | Texto do botão |
 | `buttonUrl?` | `string` | URL do botão |
-| `buttonVariant?` | `'primary' \ | 'secondary' \ | 'success' \ | 'danger'` | Variante do botão |
-| `alignment?` | `'left' \ | 'center' \ | 'right'` | Alinhamento do conteúdo |
+| `buttonVariant?` | `'primary'` `'secondary'` `'success'` `'danger'` | Variante do botão |
+| `alignment?` | `'left'` `center'` `'right'` | Alinhamento do conteúdo |
 | `backgroundColor?` | `string` | Cor de fundo do bloco |
 | `textColor?` | `string` | Cor do texto |
 | `fontSize?` | `number` | Tamanho da fonte |
@@ -3372,7 +3175,7 @@ Valores disponíveis: `system`, `monokai`, `modern`, `corporate`, `minimal`.
 | --- | --- | --- |
 | `show` | `boolean` | Controla exibição do rodapé |
 | `links?` | `Array<{ text: string; url: string }>` | Links do rodapé |
-| `socialLinks?` | `Array<{ platform: 'facebook' \ | 'twitter' \ | 'linkedin' \ | 'github'; url: string }>` | Redes sociais |
+| `socialLinks?` | `Array<{ platform: 'facebook' 'twitter' 'linkedin' 'github'; url: string }>` | Redes sociais |
 | `copyrightText?` | `string` | Texto de copyright |
 | `unsubscribeText?` | `string` | Texto de cancelamento |
 | `backgroundColor?` | `string` | Cor de fundo |
@@ -3506,15 +3309,6 @@ sequenceDiagram
     ExpressApp-->>User: 200 OK
 ```
 
-## Integração com o ecossistema do laboratório
-
-- **Express**: expõe a rota de teste e faz o bootstrap do servidor.
-- **dotenv**: carrega `SMTP_USER` e `SMTP_PASS` antes da montagem do `SMTP_CONFIG`.
-- **Nodemailer**: transporta o email real via `createTransport` e `sendMail`.
-- **Sistema de arquivos**: `AttachmentService.addFromPath(...)` lê .
-- **Temas e template engine**: `TemplateService`, `TemplateFactory` e `TemplateBuilder` montam o HTML gerado.
-- **Console**: os helpers emitem logs de início e resultado com `console.log`.
-
 ## Tratamento de erros
 
 | Componente | Condição | Efeito |
@@ -3526,18 +3320,6 @@ sequenceDiagram
 | `TemplateService.renderTemplate` | Falha na renderização | Lança `Error` com contexto |
 | `TemplateFactory.createTemplate` | Tema inexistente | Lança `Error` |
 
-
-## Dependências e dados locais usados pelos exemplos
-
-A rota GET /test não converte erros de addFromPath em resposta JSON própria. Se  não existir ou não for um arquivo válido, o fluxo falha antes de chegar ao res.json(result).
-
-- `process.env.SMTP_USER`
-- `process.env.SMTP_PASS`
-- `smtp.gmail.com`
-- Porta `3001`
-- Diretório local 
-- Imagem remota de logo em alguns exemplos de template
-- Ícones sociais servidos por `cdn.simpleicons.org`
 
 ## Referência rápida das classes-chave
 
@@ -3754,8 +3536,8 @@ A interface representa o template montável e renderizável consumido por `Email
 | `content` | `string` | HTML já pronto para renderização direta. |
 | `buttonText` | `string` | Rótulo do botão principal. |
 | `buttonUrl` | `string` | URL do botão principal. |
-| `buttonVariant` | `'primary' \ | 'secondary' \ | 'success' \ | 'danger'` | Variante visual do botão. |
-| `alignment` | `'left' \ | 'center' \ | 'right'` | Alinhamento do bloco do corpo. |
+| `buttonVariant` | `'primary'` `'secondary'` `'success'`  `'danger'` | Variante visual do botão. |
+| `alignment` | `'left'` `'center'` `'right'` | Alinhamento do bloco do corpo. |
 | `backgroundColor` | `string` | Cor de fundo do conteúdo. |
 | `textColor` | `string` | Cor do texto do conteúdo. |
 | `fontSize` | `number` | Tamanho base da fonte em pixels. |
@@ -3769,7 +3551,7 @@ A interface representa o template montável e renderizável consumido por `Email
 | --- | --- | --- |
 | `show` | `boolean` | Habilita ou oculta o rodapé. |
 | `links` | `Array<{ text: string; url: string }>` | Links textuais do rodapé. |
-| `socialLinks` | `Array<{ platform: 'facebook' \ | 'twitter' \ | 'linkedin' \ | 'github'; url: string }>` | Ícones sociais com URL de destino. |
+| `socialLinks` | `Array<{ platform: 'facebook' 'twitter' 'linkedin' 'github'; url: string }>` | Ícones sociais com URL de destino. |
 | `copyrightText` | `string` | Texto de copyright. |
 | `unsubscribeText` | `string` | Texto do link de cancelamento de inscrição. |
 | `backgroundColor` | `string` | Cor de fundo do rodapé. |
@@ -3789,7 +3571,7 @@ O `TemplateBuilder` mantém o HTML acumulado em uma string interna e devolve a m
 | `template` | `string` | Buffer interno que acumula os fragmentos HTML construídos pelos métodos. |
 | `theme` | `ITheme` | Tema base usado para cores, tipografia e espaçamento. |
 | `config` | `ITemplateConfig` | Configuração estrutural do template. |
-| `variant` | `'light' \ | 'dark'` | Seleção da paleta do tema. |
+| `variant` | `'light'` `'dark'` | Seleção da paleta do tema. |
 
 
 ### Dependências do construtor
@@ -3798,7 +3580,7 @@ O `TemplateBuilder` mantém o HTML acumulado em uma string interna e devolve a m
 | --- | --- |
 | `ITheme` | Fornece as paletas `light` e `dark`, tokens tipográficos e espaçamentos. |
 | `ITemplateConfig` | Define quais partes serão exibidas e quais conteúdos serão montados. |
-| `'light' \ | 'dark'` | Seleciona a paleta aplicada durante a montagem HTML. |
+| `'light'` `'dark'` | Seleciona a paleta aplicada durante a montagem HTML. |
 
 
 ### Métodos públicos
@@ -4629,7 +4411,7 @@ Esse enum é a chave de seleção usada por `TemplateFactory` e `TemplateService
 | --- | --- | --- |
 | `name` | `string` | Nome do template gerado, montado como `${themeType}_${variant}`. |
 | `theme` | `ThemeType` | Tema associado ao template. |
-| `variant` | `'light' \ | 'dark'` | Variante visual aplicada ao tema. |
+| `variant` | `'light'` `'dark'` | Variante visual aplicada ao tema. |
 | `config` | `ITemplateConfig` | Configuração estrutural usada na composição do email. |
 | `render` | `(data: any) => Promise<string>` | Função assíncrona que gera o HTML final. |
 
@@ -4643,9 +4425,9 @@ Esse enum é a chave de seleção usada por `TemplateFactory` e `TemplateService
 | `header?` | `IHeaderConfig` | Configuração opcional do cabeçalho. |
 | `body?` | `IBodyConfig` | Configuração opcional do conteúdo principal. |
 | `footer?` | `IFooterConfig` | Configuração opcional do rodapé. |
-| `layout?` | `'full' \ | 'minimal'` | Define a estrutura geral do template. |
-| `spacing?` | `'compact' \ | 'normal' \ | 'relaxed'` | Ajusta a densidade de espaçamento do layout. |
-| `borderRadius?` | `'none' \ | 'small' \ | 'medium' \ | 'large'` | Controla o arredondamento dos blocos. |
+| `layout?` | `'full'` `'minimal'` | Define a estrutura geral do template. |
+| `spacing?` | `'compact'` `'normal'` `'relaxed'` | Ajusta a densidade de espaçamento do layout. |
+| `borderRadius?` | `'none'` `'small'` `'medium'` `'large'` | Controla o arredondamento dos blocos. |
 
 
 #### `IHeaderConfig`
@@ -4655,7 +4437,7 @@ Esse enum é a chave de seleção usada por `TemplateFactory` e `TemplateService
 | Propriedade | Tipo | Descrição |
 | --- | --- | --- |
 | `show` | `boolean` | Define se o cabeçalho será renderizado. |
-| `logo?` | `{ type: 'text' \ | 'image'; text?: string; imageUrl?: string; alt?: string; size?: 'small' \ | 'medium' \ | 'large' }` | Define o conteúdo e a apresentação do logo. |
+| `logo?` | `{ type: 'text' 'image'; text?: string; imageUrl?: string; alt?: string; size?: 'small' 'medium' 'large' }` | Define o conteúdo e a apresentação do logo. |
 | `backgroundColor?` | `string` | Cor de fundo do cabeçalho. |
 | `textColor?` | `string` | Cor do texto do cabeçalho. |
 
@@ -4664,11 +4446,11 @@ Esse enum é a chave de seleção usada por `TemplateFactory` e `TemplateService
 
 | Propriedade | Tipo | Descrição |
 | --- | --- | --- |
-| `type` | `'text' \ | 'image'` | Tipo do logo. |
+| `type` | `'text'`  `'image'` | Tipo do logo. |
 | `text?` | `string` | Texto exibido quando `type` é `text`. |
 | `imageUrl?` | `string` | URL da imagem quando `type` é `image`. |
 | `alt?` | `string` | Texto alternativo da imagem. |
-| `size?` | `'small' \ | 'medium' \ | 'large'` | Tamanho visual do logo. |
+| `size?` | `'small'` `'medium'` `'large'` | Tamanho visual do logo. |
 
 
 #### `IBodyConfig`
@@ -4682,8 +4464,8 @@ Esse enum é a chave de seleção usada por `TemplateFactory` e `TemplateService
 | `content?` | `string` | Conteúdo HTML completo que substitui o bloco padrão. |
 | `buttonText?` | `string` | Texto do botão de chamada para ação. |
 | `buttonUrl?` | `string` | URL de destino do botão. |
-| `buttonVariant?` | `'primary' \ | 'secondary' \ | 'success' \ | 'danger'` | Variante declarada para o botão. |
-| `alignment?` | `'left' \ | 'center' \ | 'right'` | Alinhamento do conteúdo. |
+| `buttonVariant?` | `'primary'` `'secondary'` `'success'`  `'danger'` | Variante declarada para o botão. |
+| `alignment?` | `'left'` `'center'` `'right'` | Alinhamento do conteúdo. |
 | `backgroundColor?` | `string` | Cor de fundo do corpo. |
 | `textColor?` | `string` | Cor do texto do corpo. |
 | `fontSize?` | `number` | Tamanho base da fonte em pixels. |
@@ -4697,7 +4479,7 @@ Esse enum é a chave de seleção usada por `TemplateFactory` e `TemplateService
 | --- | --- | --- |
 | `show` | `boolean` | Define se o rodapé será renderizado. |
 | `links?` | `Array<{ text: string; url: string }>` | Lista de links textuais do rodapé. |
-| `socialLinks?` | `Array<{ platform: 'facebook' \ | 'twitter' \ | 'linkedin' \ | 'github'; url: string }>` | Lista de links sociais. |
+| `socialLinks?` | `Array<{ platform: 'facebook' 'twitter' 'linkedin' 'github'; url: string }>` | Lista de links sociais. |
 | `copyrightText?` | `string` | Texto de copyright. |
 | `unsubscribeText?` | `string` | Texto do link de descadastro. |
 | `backgroundColor?` | `string` | Cor de fundo do rodapé. |
@@ -4716,7 +4498,7 @@ Esse enum é a chave de seleção usada por `TemplateFactory` e `TemplateService
 
 | Propriedade | Tipo | Descrição |
 | --- | --- | --- |
-| `platform` | `'facebook' \ | 'twitter' \ | 'linkedin' \ | 'github'` | Plataforma social usada para escolher o ícone. |
+| `platform` | `'facebook'` `'twitter'`  `'linkedin'`  `'github'` | Plataforma social usada para escolher o ícone. |
 | `url` | `string` | Destino do link social. |
 
 
@@ -4878,7 +4660,7 @@ TemplateFactory.createTemplate e TemplateService.renderTemplate não compartilha
 | --- | --- |
 | `ITheme` | Tema concreto usado para cores, tipografia, espaçamento e recursos específicos. |
 | `ITemplateConfig` | Configuração estrutural do template. |
-| `'light' \ | 'dark'` | Variante visual aplicada ao tema. |
+| `'light'` `'dark'` | Variante visual aplicada ao tema. |
 
 
 **Propriedades**
@@ -4888,7 +4670,7 @@ TemplateFactory.createTemplate e TemplateService.renderTemplate não compartilha
 | `template` | `string` | Buffer interno com o HTML parcial em construção. |
 | `theme` | `ITheme` | Tema efetivo do template. |
 | `config` | `ITemplateConfig` | Configuração usada para decidir quais blocos renderizar. |
-| `variant` | `'light' \ | 'dark'` | Variante corrente para escolher a paleta apropriada. |
+| `variant` | `'light'` `'dark'` | Variante corrente para escolher a paleta apropriada. |
 
 
 **Métodos públicos**
