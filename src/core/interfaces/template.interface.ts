@@ -50,7 +50,7 @@ export interface IFooterConfig {
     url: string;
   }>;
   socialLinks?: Array<{
-    platform: 'facebook' | 'twitter' | 'linkedin' | 'github';
+    platform: 'facebook' | 'twitter' | 'linkedin' | 'github' | 'instagram' | 'youtube' | 'tiktok' | 'pinterest' | 'reddit' | 'pinterest' | 'tiktok' | 'gitlab' | 'stackoverflow' | 'medium' | 'dribbble' | 'behance' | 'telegram';
     url: string;
   }>;
   copyrightText?: string;
