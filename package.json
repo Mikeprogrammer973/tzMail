@@ -1,6 +1,6 @@
 {
   "name": "tzmail",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Email library for Next.js with customizable templates and themes",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
