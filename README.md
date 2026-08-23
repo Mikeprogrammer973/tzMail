@@ -19,9 +19,9 @@ A powerful and flexible TypeScript/Node.js email package built on top of Nodemai
 ## Installation
 
 ```bash
-npm install tzmail
+npm install @zyther/tzmail
 # or
-yarn add tzmail
+yarn add @zyther/tzmail
 ```
 
 ## Quick Start
