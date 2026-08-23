@@ -1820,7 +1820,7 @@ flowchart TB
 
 
 ```bash
-npm install tzmail
+npm install @zyther/tzmail
 ```
 
 ---
