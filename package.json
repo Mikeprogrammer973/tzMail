@@ -1,6 +1,6 @@
 {
   "name": "@zyther/tzmail",
-  "version": "1.0.6",
+  "version": "0.1.0",
   "description": "A powerful and flexible TypeScript/Node.js email package built on top of Nodemailer, featuring a robust templating system with built-in themes, caching, and easy attachment management.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
