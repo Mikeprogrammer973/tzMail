@@ -13,4 +13,3 @@ export { MinimalTheme } from './templates/themes/minimal.theme';
 export { ModernTheme } from './templates/themes/modern.theme';
 export { MonokaiTheme } from './templates/themes/monokai.theme';
 export { SystemTheme } from './templates/themes/system.theme';
-

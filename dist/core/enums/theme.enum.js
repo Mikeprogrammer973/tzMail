@@ -8,4 +8,4 @@ var ThemeType;
     ThemeType["MODERN"] = "modern";
     ThemeType["CORPORATE"] = "corporate";
     ThemeType["MINIMAL"] = "minimal";
-})(ThemeType = exports.ThemeType || (exports.ThemeType = {}));
+})(ThemeType || (exports.ThemeType = ThemeType = {}));

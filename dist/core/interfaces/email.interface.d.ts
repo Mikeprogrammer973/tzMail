@@ -1,5 +1,3 @@
-/// <reference types="node" />
-/// <reference types="node" />
 import { ITemplate } from "./template.interface";
 export interface IEmailOptions {
     to: string | string[];

@@ -7,4 +7,4 @@ var TemplatePart;
     TemplatePart["BODY"] = "body";
     TemplatePart["FOOTER"] = "footer";
     TemplatePart["BUTTON"] = "button";
-})(TemplatePart = exports.TemplatePart || (exports.TemplatePart = {}));
+})(TemplatePart || (exports.TemplatePart = TemplatePart = {}));

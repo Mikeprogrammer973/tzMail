@@ -1,5 +1,3 @@
-/// <reference types="node" />
-/// <reference types="node" />
 import { IAttachment } from '../core/interfaces/email.interface';
 /**
  * AttachmentService - Gerencia anexos para emails
