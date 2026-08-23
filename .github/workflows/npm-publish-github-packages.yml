@@ -35,23 +35,6 @@ jobs:
           node-version: 20
           registry-url: https://npm.pkg.github.com/
       - run: npm ci
-
-      - name: Check version
-        id: check
-        run: |
-          VERSION=$(node -p "require('./package.json').version")
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
-          
-          # Verifica se a versão já existe no npm
-          if npm view @zyther/react-toastify@$VERSION version &> /dev/null; then
-            echo "Version $VERSION already exists, skipping publish"
-            echo "skip=true" >> $GITHUB_OUTPUT
-          else
-            echo "skip=false" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Publish
-        if: steps.check.outputs.skip == 'false'
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - run: npm publish
+        env: 
+         NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
