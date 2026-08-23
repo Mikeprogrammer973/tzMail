@@ -1,4 +1,4 @@
-# tzMail
+# tzmail
 
 A powerful and flexible TypeScript/Node.js email package built on top of Nodemailer, featuring a robust templating system with built-in themes, caching, and easy attachment management.
 
@@ -29,7 +29,7 @@ yarn add @zyther/tzmail
 ### 1. Initialize the Factory
 
 ```typescript
-import { EmailFactory } from 'tzmail';
+import { EmailFactory } from '@zyther/tzmail';
 
 const smtpConfig = {
   host: 'smtp.example.com',
